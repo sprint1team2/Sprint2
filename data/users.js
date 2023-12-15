@@ -19,9 +19,11 @@ const getAllUsers = () => {
     return users;
 };
 
+// Doesn't properly add users to the array
 const addUser = (newUser) => {
     users.push(newUser);
 };
+
 
 module.exports = {
     getAllUsers,

@@ -1,5 +1,14 @@
 <%- include('./partials/head.ejs') %>
 <%- include('./partials/nav.ejs') %>
         <h1><%= pageTitle %></h1>
+        <% if (user) { %>
+        <form action="/log" method="post">
+            <label for="testLogging">Enter some text:</label>
+            <input type="text" name="testLogging" id="testLogging" required>
+            <br>
+            <button type="submit">Submit</button>
+        </form>
+        <% } %>
+
     </body>
 </html>
