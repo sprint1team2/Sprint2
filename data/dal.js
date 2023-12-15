@@ -1,2 +1,2 @@
-// Use either MongoDB or Mongoose for Mongo database access. Discuss in meeting.
+// Use MongoDB module
 const { Pool } = require('pg');

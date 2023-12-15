@@ -1,0 +1,13 @@
+<%- include('./partials/head.ejs') %>
+<%- include('./partials/nav.ejs') %>
+    <h1><%= pageTitle %></h1>
+    <form method="post" action="/login">
+        <label for="username">Username:</label>
+        <input type="text" name="username" id="username" required>
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password" required>
+        <br>
+        <button type="submit">Login</button>
+    </form>
+</body>
+</html>
