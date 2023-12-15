@@ -15,11 +15,15 @@ const users = [
     }
 ];
 
+const getAllUsers = () => {
+    return users;
+};
+
+const addUser = (newUser) => {
+    users.push(newUser);
+};
+
 module.exports = {
-    users
-    // getUsers: () => users,
-    // addUser: (user) => {
-    //     users.push(user);
-    // }
-    // More user-related functions here
-}
+    getAllUsers,
+    addUser,
+};

@@ -1,8 +1,8 @@
 const express = require('express');
 const { addUser } = require('../data/users');
 const router = express.Router();
-const usersData = require('../data/users'); // Temporary users file for testing purposes. Remove when database is complete.
-const users = usersData.users;
+const userData = require('../data/users'); // Temporary users file for testing purposes. Remove when database is complete.
+const users = userData.getAllUsers();
 // const dal = require('../data/dal');
 
 router.get('/', async (req, res) => {
@@ -18,7 +18,7 @@ router.get('/', async (req, res) => {
 router.get('/login', async (req, res) => {
     user = req.session.user;
     try {
-        res.render('login', { pageTitle: 'Login', user });
+        res.render('login', { pageTitle: 'Login', user, message: '' });
         console.log(users);
     } catch (error) {
         console.log(error);
@@ -35,7 +35,7 @@ router.post('/login', async (req, res) => {
         req.session.user = user;
         res.redirect('/');
     } else {
-        res.render('login', { pageTitle: 'Login', error: 'Invalid username or password' });
+        res.render('login', { pageTitle: 'Login', message: 'Invalid username or password' });
     }
 });
 
@@ -59,9 +59,15 @@ router.post('/register', async (req, res) => {
         email
     };
 
+    // try {
+    //     users.push(newUser);
+    // } catch (error) {
+        
+    // }
     addUser(newUser);
+    console.log(users);
 
-    res.session.user = newUser;
+    req.session.user = newUser;
     res.redirect('/');
 });
 
