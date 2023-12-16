@@ -1,0 +1,900 @@
+[{
+  "_id": {
+    "$oid": "657d1db57e03acb792c57f0a"
+  },
+  "Title": "Blessed Event",
+  "ReleaseDate": "2019-10-03",
+  "Genres": "Comedy|Drama",
+  "Director": "Rachel Hannigan"
+},
+{
+  "_id": {
+    "$oid": "657d1db57e03acb792c57f0b"
+  },
+  "Title": "Into the Woods",
+  "ReleaseDate": "2010-07-29",
+  "Genres": "Adventure|Comedy|Fantasy|Musical",
+  "Director": "Shaine Lewing"
+},
+{
+  "_id": {
+    "$oid": "657d1db57e03acb792c57f0c"
+  },
+  "Title": "The Hellions",
+  "ReleaseDate": "2004-06-02",
+  "Genres": "Adventure|Drama|Western",
+  "Director": "Scarlett Milliere"
+},
+{
+  "_id": {
+    "$oid": "657d1db57e03acb792c57f0d"
+  },
+  "Title": "Rosemary's Baby",
+  "ReleaseDate": "2012-05-06",
+  "Genres": "Horror|Thriller",
+  "Director": "Clo Langabeer"
+},
+{
+  "_id": {
+    "$oid": "657d1db57e03acb792c57f0e"
+  },
+  "Title": "Kid Millions",
+  "ReleaseDate": "2001-04-27",
+  "Genres": "Comedy|Musical",
+  "Director": "Fleming Southouse"
+},
+{
+  "_id": {
+    "$oid": "657d1db57e03acb792c57f0f"
+  },
+  "Title": "Dragon Ball Z: The Return of Cooler (Doragon bôru Z 6: Gekitotsu! Hyakuoku pawâ no senshi)",
+  "ReleaseDate": "2019-06-09",
+  "Genres": "Action|Adventure|Animation",
+  "Director": "Morton Gallyhaock"
+},
+{
+  "_id": {
+    "$oid": "657d1db57e03acb792c57f10"
+  },
+  "Title": "Epidemic",
+  "ReleaseDate": "2021-05-28",
+  "Genres": "Drama|Horror|Thriller",
+  "Director": "Desmund Knight"
+},
+{
+  "_id": {
+    "$oid": "657d1db57e03acb792c57f11"
+  },
+  "Title": "Miraculum",
+  "ReleaseDate": "2016-02-09",
+  "Genres": "Drama",
+  "Director": "Wakefield Elington"
+},
+{
+  "_id": {
+    "$oid": "657d1db57e03acb792c57f12"
+  },
+  "Title": "Pride of the Yankees, The",
+  "ReleaseDate": "2022-02-10",
+  "Genres": "Drama",
+  "Director": "Morgan Beevens"
+},
+{
+  "_id": {
+    "$oid": "657d1db57e03acb792c57f13"
+  },
+  "Title": "Dogville",
+  "ReleaseDate": "2011-10-31",
+  "Genres": "Drama|Mystery|Thriller",
+  "Director": "Marja Leaming"
+},
+{
+  "_id": {
+    "$oid": "657d1db57e03acb792c57f14"
+  },
+  "Title": "Cosmonaut (Cosmonauta)",
+  "ReleaseDate": "2020-05-07",
+  "Genres": "Comedy",
+  "Director": "Manny Stainer"
+},
+{
+  "_id": {
+    "$oid": "657d1db57e03acb792c57f15"
+  },
+  "Title": "Jackass Number Two",
+  "ReleaseDate": "2000-12-24",
+  "Genres": "Comedy|Documentary",
+  "Director": "Jason Advani"
+},
+{
+  "_id": {
+    "$oid": "657d1db57e03acb792c57f16"
+  },
+  "Title": "Big Red One, The",
+  "ReleaseDate": "2009-07-03",
+  "Genres": "Action|Adventure|Drama|War",
+  "Director": "Neils Seabrocke"
+},
+{
+  "_id": {
+    "$oid": "657d1db57e03acb792c57f17"
+  },
+  "Title": "Dreams of  a Life",
+  "ReleaseDate": "2019-04-02",
+  "Genres": "Documentary",
+  "Director": "Christophe Stambridge"
+},
+{
+  "_id": {
+    "$oid": "657d1db57e03acb792c57f18"
+  },
+  "Title": "Children of the Corn IV: The Gathering",
+  "ReleaseDate": "2022-02-13",
+  "Genres": "Horror",
+  "Director": "Agnes Lodder"
+},
+{
+  "_id": {
+    "$oid": "657d1db57e03acb792c57f19"
+  },
+  "Title": "Pat and Mike",
+  "ReleaseDate": "2000-09-25",
+  "Genres": "Comedy|Romance",
+  "Director": "Raven Ruppele"
+},
+{
+  "_id": {
+    "$oid": "657d1db57e03acb792c57f1a"
+  },
+  "Title": "Big Stan",
+  "ReleaseDate": "2017-10-03",
+  "Genres": "Comedy",
+  "Director": "Joachim Sincock"
+},
+{
+  "_id": {
+    "$oid": "657d1db57e03acb792c57f1b"
+  },
+  "Title": "Walk Like a Man",
+  "ReleaseDate": "2009-04-22",
+  "Genres": "Comedy",
+  "Director": "Kati Ames"
+},
+{
+  "_id": {
+    "$oid": "657d1db57e03acb792c57f1c"
+  },
+  "Title": "Valerie and Her Week of Wonders (Valerie a týden divu)",
+  "ReleaseDate": "2007-10-11",
+  "Genres": "Adventure|Drama|Fantasy",
+  "Director": "Alaine Dahlborg"
+},
+{
+  "_id": {
+    "$oid": "657d1db57e03acb792c57f1d"
+  },
+  "Title": "Street with No Name, The",
+  "ReleaseDate": "2005-12-25",
+  "Genres": "Crime|Drama|Film-Noir|Thriller",
+  "Director": "Vladimir Skottle"
+},
+{
+  "_id": {
+    "$oid": "657d1db57e03acb792c57f1e"
+  },
+  "Title": "My Life and Times With Antonin Artaud (En compagnie d'Antonin Artaud)",
+  "ReleaseDate": "2003-06-03",
+  "Genres": "Drama",
+  "Director": "Lilyan Colbourne"
+},
+{
+  "_id": {
+    "$oid": "657d1db57e03acb792c57f1f"
+  },
+  "Title": "Turin Horse, The (A Torinói ló)",
+  "ReleaseDate": "2007-06-13",
+  "Genres": "Drama",
+  "Director": "Melvyn Grimley"
+},
+{
+  "_id": {
+    "$oid": "657d1db57e03acb792c57f20"
+  },
+  "Title": "Black Death",
+  "ReleaseDate": "2002-02-24",
+  "Genres": "Adventure|Drama|Horror|Mystery",
+  "Director": "Emmy Matevosian"
+},
+{
+  "_id": {
+    "$oid": "657d1db57e03acb792c57f21"
+  },
+  "Title": "My Sweet Pepper Land",
+  "ReleaseDate": "2009-05-12",
+  "Genres": "Drama",
+  "Director": "Monti Prowse"
+},
+{
+  "_id": {
+    "$oid": "657d1db57e03acb792c57f22"
+  },
+  "Title": "Elle: A Modern Cinderella Tale",
+  "ReleaseDate": "2019-08-20",
+  "Genres": "Children|Drama|Fantasy|Sci-Fi",
+  "Director": "Margette MacTeague"
+},
+{
+  "_id": {
+    "$oid": "657d1db57e03acb792c57f23"
+  },
+  "Title": "Moustache, La",
+  "ReleaseDate": "2019-12-30",
+  "Genres": "Drama|Mystery|Thriller",
+  "Director": "Charlot Farrey"
+},
+{
+  "_id": {
+    "$oid": "657d1db57e03acb792c57f24"
+  },
+  "Title": "Bad News Bears",
+  "ReleaseDate": "2019-04-03",
+  "Genres": "Children|Comedy",
+  "Director": "Viole Berth"
+},
+{
+  "_id": {
+    "$oid": "657d1db57e03acb792c57f25"
+  },
+  "Title": "African Queen, The",
+  "ReleaseDate": "2006-08-28",
+  "Genres": "Adventure|Comedy|Romance|War",
+  "Director": "Giraud McQuorkell"
+},
+{
+  "_id": {
+    "$oid": "657d1db57e03acb792c57f26"
+  },
+  "Title": "California Suite",
+  "ReleaseDate": "2001-03-12",
+  "Genres": "Comedy",
+  "Director": "Trula Tourle"
+},
+{
+  "_id": {
+    "$oid": "657d1db57e03acb792c57f27"
+  },
+  "Title": "Star Trek: The Motion Picture",
+  "ReleaseDate": "2019-03-06",
+  "Genres": "Adventure|Sci-Fi",
+  "Director": "Dot Bardwell"
+},
+{
+  "_id": {
+    "$oid": "657d1db57e03acb792c57f28"
+  },
+  "Title": "Blank Generation, The",
+  "ReleaseDate": "2019-04-22",
+  "Genres": "Musical",
+  "Director": "Nell Mustin"
+},
+{
+  "_id": {
+    "$oid": "657d1db57e03acb792c57f29"
+  },
+  "Title": "Russia's Toughest Prisons (National Geographic)",
+  "ReleaseDate": "2001-10-24",
+  "Genres": "Documentary",
+  "Director": "Esmaria Arblaster"
+},
+{
+  "_id": {
+    "$oid": "657d1db57e03acb792c57f2a"
+  },
+  "Title": "Bloodbrothers",
+  "ReleaseDate": "2004-11-19",
+  "Genres": "Drama",
+  "Director": "Dniren McTavy"
+},
+{
+  "_id": {
+    "$oid": "657d1db57e03acb792c57f2b"
+  },
+  "Title": "Hangin' with the Homeboys",
+  "ReleaseDate": "2022-01-06",
+  "Genres": "Comedy|Drama",
+  "Director": "Sula Armsby"
+},
+{
+  "_id": {
+    "$oid": "657d1db57e03acb792c57f2c"
+  },
+  "Title": "Widow of St. Pierre, The (Veuve de Saint-Pierre, La)",
+  "ReleaseDate": "2002-06-04",
+  "Genres": "Drama|Romance",
+  "Director": "Currie Stolze"
+},
+{
+  "_id": {
+    "$oid": "657d1db57e03acb792c57f2d"
+  },
+  "Title": "Sarafina!",
+  "ReleaseDate": "2020-03-31",
+  "Genres": "Drama",
+  "Director": "Broderic Ragate"
+},
+{
+  "_id": {
+    "$oid": "657d1db57e03acb792c57f2e"
+  },
+  "Title": "5th Musketeer, The (a.k.a. Fifth Musketeer, The)",
+  "ReleaseDate": "2011-04-02",
+  "Genres": "Adventure",
+  "Director": "Randie Bartosinski"
+},
+{
+  "_id": {
+    "$oid": "657d1db57e03acb792c57f2f"
+  },
+  "Title": "Howling, The",
+  "ReleaseDate": "2002-09-20",
+  "Genres": "Horror|Mystery",
+  "Director": "Arv Pirrey"
+},
+{
+  "_id": {
+    "$oid": "657d1db57e03acb792c57f30"
+  },
+  "Title": "Adrift (À Deriva)",
+  "ReleaseDate": "2012-01-20",
+  "Genres": "Drama",
+  "Director": "Laughton Willars"
+},
+{
+  "_id": {
+    "$oid": "657d1db57e03acb792c57f31"
+  },
+  "Title": "I Really Hate My Job",
+  "ReleaseDate": "2019-06-21",
+  "Genres": "Comedy|Drama",
+  "Director": "Ainslee Hustings"
+},
+{
+  "_id": {
+    "$oid": "657d1db57e03acb792c57f32"
+  },
+  "Title": "From Noon Till Three",
+  "ReleaseDate": "2010-10-09",
+  "Genres": "Comedy|Romance|Western",
+  "Director": "Mead Artingstall"
+},
+{
+  "_id": {
+    "$oid": "657d1db57e03acb792c57f33"
+  },
+  "Title": "Maria Bamford: The Special Special Special!",
+  "ReleaseDate": "2020-08-02",
+  "Genres": "Comedy",
+  "Director": "Benjie Zanre"
+},
+{
+  "_id": {
+    "$oid": "657d1db57e03acb792c57f34"
+  },
+  "Title": "Hunters, The",
+  "ReleaseDate": "2016-05-09",
+  "Genres": "Drama|War",
+  "Director": "Hailee Hugues"
+},
+{
+  "_id": {
+    "$oid": "657d1db57e03acb792c57f35"
+  },
+  "Title": "Stop-Loss",
+  "ReleaseDate": "2018-11-04",
+  "Genres": "Drama|War",
+  "Director": "Silvio Wisson"
+},
+{
+  "_id": {
+    "$oid": "657d1db57e03acb792c57f36"
+  },
+  "Title": "Jungleground",
+  "ReleaseDate": "2010-04-08",
+  "Genres": "Action|Sci-Fi|Thriller",
+  "Director": "Eydie Regina"
+},
+{
+  "_id": {
+    "$oid": "657d1db57e03acb792c57f37"
+  },
+  "Title": "American Graffiti",
+  "ReleaseDate": "2022-06-19",
+  "Genres": "Comedy|Drama",
+  "Director": "Flore Fildes"
+},
+{
+  "_id": {
+    "$oid": "657d1db57e03acb792c57f38"
+  },
+  "Title": "Walk, Don't Run",
+  "ReleaseDate": "2014-06-01",
+  "Genres": "Comedy|Romance",
+  "Director": "Rosina Rawsen"
+},
+{
+  "_id": {
+    "$oid": "657d1db57e03acb792c57f39"
+  },
+  "Title": "Give 'em Hell, Malone",
+  "ReleaseDate": "2019-05-10",
+  "Genres": "Action|Crime|Thriller",
+  "Director": "Neila Marsay"
+},
+{
+  "_id": {
+    "$oid": "657d1db57e03acb792c57f3a"
+  },
+  "Title": "Red Scorpion",
+  "ReleaseDate": "2016-03-02",
+  "Genres": "Action",
+  "Director": "Kippy Thon"
+},
+{
+  "_id": {
+    "$oid": "657d1db57e03acb792c57f3b"
+  },
+  "Title": "Rock-A-Doodle",
+  "ReleaseDate": "2004-10-17",
+  "Genres": "Adventure|Animation|Children|Musical",
+  "Director": "Woodman Goodwill"
+},
+{
+  "_id": {
+    "$oid": "657d1db57e03acb792c57f3c"
+  },
+  "Title": "Night Watch (Nochnoy dozor)",
+  "ReleaseDate": "2011-07-27",
+  "Genres": "Action|Fantasy|Horror|Mystery|Sci-Fi|Thriller",
+  "Director": "Perren Dalyell"
+},
+{
+  "_id": {
+    "$oid": "657d1db57e03acb792c57f3d"
+  },
+  "Title": "Blood on the Moon",
+  "ReleaseDate": "2007-07-11",
+  "Genres": "Action|Drama|Western",
+  "Director": "Culver Driffill"
+},
+{
+  "_id": {
+    "$oid": "657d1db57e03acb792c57f3e"
+  },
+  "Title": "House",
+  "ReleaseDate": "2009-03-24",
+  "Genres": "Drama|Horror|Thriller",
+  "Director": "Kimmy Mum"
+},
+{
+  "_id": {
+    "$oid": "657d1db57e03acb792c57f3f"
+  },
+  "Title": "Skeleton Twins, The",
+  "ReleaseDate": "2009-11-26",
+  "Genres": "Drama",
+  "Director": "Gayla Thorius"
+},
+{
+  "_id": {
+    "$oid": "657d1db57e03acb792c57f40"
+  },
+  "Title": "Clink of Ice, The (a.k.a.: Sound of Ice Cubes, The) (Le bruit des glaçons)",
+  "ReleaseDate": "2001-05-19",
+  "Genres": "Comedy|Drama",
+  "Director": "Elisabet Gerwood"
+},
+{
+  "_id": {
+    "$oid": "657d1db57e03acb792c57f41"
+  },
+  "Title": "Angele",
+  "ReleaseDate": "2016-10-24",
+  "Genres": "Drama",
+  "Director": "Chan Turfrey"
+},
+{
+  "_id": {
+    "$oid": "657d1db57e03acb792c57f42"
+  },
+  "Title": "Actress, The",
+  "ReleaseDate": "2018-01-08",
+  "Genres": "Comedy|Drama",
+  "Director": "Jerrie Dunnan"
+},
+{
+  "_id": {
+    "$oid": "657d1db57e03acb792c57f43"
+  },
+  "Title": "Red Psalm (Még kér a nép)",
+  "ReleaseDate": "2018-12-13",
+  "Genres": "Drama|Musical|War",
+  "Director": "Horton Clewer"
+},
+{
+  "_id": {
+    "$oid": "657d1db57e03acb792c57f44"
+  },
+  "Title": "Shadow Warriors 2 (Assault on Devil's Island)",
+  "ReleaseDate": "2007-11-26",
+  "Genres": "Action|Adventure|Thriller",
+  "Director": "Carolyne Treasaden"
+},
+{
+  "_id": {
+    "$oid": "657d1db57e03acb792c57f45"
+  },
+  "Title": "Paperboy, The",
+  "ReleaseDate": "2010-04-30",
+  "Genres": "Thriller",
+  "Director": "Janeczka Ollarenshaw"
+},
+{
+  "_id": {
+    "$oid": "657d1db57e03acb792c57f46"
+  },
+  "Title": "Terri",
+  "ReleaseDate": "2023-12-11",
+  "Genres": "Comedy",
+  "Director": "Gaspard Calver"
+},
+{
+  "_id": {
+    "$oid": "657d1db57e03acb792c57f47"
+  },
+  "Title": "Monsieur Vincent",
+  "ReleaseDate": "2012-04-26",
+  "Genres": "Drama",
+  "Director": "Lay McAtamney"
+},
+{
+  "_id": {
+    "$oid": "657d1db57e03acb792c57f48"
+  },
+  "Title": "Just One of the Guys",
+  "ReleaseDate": "2013-01-04",
+  "Genres": "Comedy",
+  "Director": "Monti Capel"
+},
+{
+  "_id": {
+    "$oid": "657d1db57e03acb792c57f49"
+  },
+  "Title": "Lonely Villa, The",
+  "ReleaseDate": "2018-12-12",
+  "Genres": "Crime|Drama",
+  "Director": "Patsy Buxsy"
+},
+{
+  "_id": {
+    "$oid": "657d1db57e03acb792c57f4a"
+  },
+  "Title": "Pigs with a P.38",
+  "ReleaseDate": "2017-04-09",
+  "Genres": "(no genres listed)",
+  "Director": "Salmon Nowaczyk"
+},
+{
+  "_id": {
+    "$oid": "657d1db57e03acb792c57f4b"
+  },
+  "Title": "This Filthy World",
+  "ReleaseDate": "2001-08-24",
+  "Genres": "Comedy|Documentary",
+  "Director": "Melodie Ing"
+},
+{
+  "_id": {
+    "$oid": "657d1db57e03acb792c57f4c"
+  },
+  "Title": "Catfish",
+  "ReleaseDate": "2005-08-06",
+  "Genres": "Documentary|Mystery",
+  "Director": "Patric Propper"
+},
+{
+  "_id": {
+    "$oid": "657d1db57e03acb792c57f4d"
+  },
+  "Title": "Treed Murray",
+  "ReleaseDate": "2015-09-15",
+  "Genres": "Drama",
+  "Director": "Vivien Van Dijk"
+},
+{
+  "_id": {
+    "$oid": "657d1db57e03acb792c57f4e"
+  },
+  "Title": "Winter of Discontent",
+  "ReleaseDate": "2007-09-26",
+  "Genres": "Drama",
+  "Director": "Cedric Wloch"
+},
+{
+  "_id": {
+    "$oid": "657d1db57e03acb792c57f4f"
+  },
+  "Title": "Wings of Desire (Himmel über Berlin, Der)",
+  "ReleaseDate": "2020-06-14",
+  "Genres": "Drama|Fantasy|Romance",
+  "Director": "Demetria Sprott"
+},
+{
+  "_id": {
+    "$oid": "657d1db57e03acb792c57f50"
+  },
+  "Title": "Chained for Life",
+  "ReleaseDate": "2022-02-21",
+  "Genres": "Crime",
+  "Director": "Hendrick McKie"
+},
+{
+  "_id": {
+    "$oid": "657d1db57e03acb792c57f51"
+  },
+  "Title": "I Know What I Saw",
+  "ReleaseDate": "2015-04-27",
+  "Genres": "Documentary",
+  "Director": "Stan Edmed"
+},
+{
+  "_id": {
+    "$oid": "657d1db57e03acb792c57f52"
+  },
+  "Title": "Leif",
+  "ReleaseDate": "2014-02-25",
+  "Genres": "Comedy|Musical",
+  "Director": "Alphard Knowlton"
+},
+{
+  "_id": {
+    "$oid": "657d1db57e03acb792c57f53"
+  },
+  "Title": "The Gamers: Hands of Fate",
+  "ReleaseDate": "2015-07-03",
+  "Genres": "Comedy|Fantasy|Romance",
+  "Director": "Augustine Gluyas"
+},
+{
+  "_id": {
+    "$oid": "657d1db57e03acb792c57f54"
+  },
+  "Title": "1000 Eyes of Dr. Mabuse, The (Die 1000 Augen des Dr. Mabuse)",
+  "ReleaseDate": "2000-02-01",
+  "Genres": "Crime|Horror|Mystery|Thriller",
+  "Director": "Gretna Twamley"
+},
+{
+  "_id": {
+    "$oid": "657d1db57e03acb792c57f55"
+  },
+  "Title": "Body of War",
+  "ReleaseDate": "2006-02-08",
+  "Genres": "Documentary|War",
+  "Director": "Boyce Mullany"
+},
+{
+  "_id": {
+    "$oid": "657d1db57e03acb792c57f56"
+  },
+  "Title": "In the Name of the King III",
+  "ReleaseDate": "2001-01-03",
+  "Genres": "Action|Adventure|Drama|Fantasy",
+  "Director": "Crin Eam"
+},
+{
+  "_id": {
+    "$oid": "657d1db57e03acb792c57f57"
+  },
+  "Title": "Verboten!",
+  "ReleaseDate": "2012-10-19",
+  "Genres": "Action|Romance|War",
+  "Director": "Wallache Poulter"
+},
+{
+  "_id": {
+    "$oid": "657d1db57e03acb792c57f58"
+  },
+  "Title": "Lammbock",
+  "ReleaseDate": "2016-11-12",
+  "Genres": "Comedy",
+  "Director": "Bell Renner"
+},
+{
+  "_id": {
+    "$oid": "657d1db57e03acb792c57f59"
+  },
+  "Title": "50 Worst Movies Ever Made, The",
+  "ReleaseDate": "2016-06-17",
+  "Genres": "Documentary",
+  "Director": "Lindsay Keitley"
+},
+{
+  "_id": {
+    "$oid": "657d1db57e03acb792c57f5a"
+  },
+  "Title": "Premonition",
+  "ReleaseDate": "2014-05-13",
+  "Genres": "Drama|Fantasy|Mystery|Thriller",
+  "Director": "Alfie Juan"
+},
+{
+  "_id": {
+    "$oid": "657d1db57e03acb792c57f5b"
+  },
+  "Title": "Solaris (Solyaris)",
+  "ReleaseDate": "2015-04-13",
+  "Genres": "Drama|Mystery|Sci-Fi",
+  "Director": "Mile Skamell"
+},
+{
+  "_id": {
+    "$oid": "657d1db57e03acb792c57f5c"
+  },
+  "Title": "Gettysburg",
+  "ReleaseDate": "2011-04-11",
+  "Genres": "Drama|War",
+  "Director": "Giles Hiland"
+},
+{
+  "_id": {
+    "$oid": "657d1db57e03acb792c57f5d"
+  },
+  "Title": "Airheads",
+  "ReleaseDate": "2012-06-05",
+  "Genres": "Comedy",
+  "Director": "Teador Pattison"
+},
+{
+  "_id": {
+    "$oid": "657d1db57e03acb792c57f5e"
+  },
+  "Title": "Nico and Dani (Krámpack)",
+  "ReleaseDate": "2015-08-03",
+  "Genres": "Comedy|Drama|Romance",
+  "Director": "Tamarah Matveichev"
+},
+{
+  "_id": {
+    "$oid": "657d1db57e03acb792c57f5f"
+  },
+  "Title": "Reluctant Debutante, The",
+  "ReleaseDate": "2016-10-04",
+  "Genres": "Comedy|Drama",
+  "Director": "Teddie Spilstead"
+},
+{
+  "_id": {
+    "$oid": "657d1db57e03acb792c57f60"
+  },
+  "Title": "In the Name of the King III",
+  "ReleaseDate": "2003-05-16",
+  "Genres": "Action|Adventure|Drama|Fantasy",
+  "Director": "Lauree Mcettrick"
+},
+{
+  "_id": {
+    "$oid": "657d1db57e03acb792c57f61"
+  },
+  "Title": "Hellboy",
+  "ReleaseDate": "2016-08-13",
+  "Genres": "Action|Adventure|Fantasy|Horror",
+  "Director": "Hermione Cuesta"
+},
+{
+  "_id": {
+    "$oid": "657d1db57e03acb792c57f62"
+  },
+  "Title": "Hail Mary ('Je vous salue, Marie')",
+  "ReleaseDate": "2007-10-16",
+  "Genres": "Drama",
+  "Director": "Thea Clemente"
+},
+{
+  "_id": {
+    "$oid": "657d1db57e03acb792c57f63"
+  },
+  "Title": "Blackout (Contraband)",
+  "ReleaseDate": "2021-10-11",
+  "Genres": "Adventure|Romance",
+  "Director": "Kippy Spedding"
+},
+{
+  "_id": {
+    "$oid": "657d1db57e03acb792c57f64"
+  },
+  "Title": "Tiger's Tail, The",
+  "ReleaseDate": "2020-11-09",
+  "Genres": "Comedy|Crime|Drama|Mystery|Thriller",
+  "Director": "Cory Pauletti"
+},
+{
+  "_id": {
+    "$oid": "657d1db57e03acb792c57f65"
+  },
+  "Title": "Dragon Ball Z: Fusion Reborn (Doragon bôru Z 12: Fukkatsu no fyushon!! Gokû to Bejîta)",
+  "ReleaseDate": "2002-11-08",
+  "Genres": "Action|Adventure|Animation",
+  "Director": "Anne-marie Tungay"
+},
+{
+  "_id": {
+    "$oid": "657d1db57e03acb792c57f66"
+  },
+  "Title": "Railroaded!",
+  "ReleaseDate": "2017-04-19",
+  "Genres": "Film-Noir",
+  "Director": "Zaccaria Neller"
+},
+{
+  "_id": {
+    "$oid": "657d1db57e03acb792c57f67"
+  },
+  "Title": "Yongary: Monster from the Deep",
+  "ReleaseDate": "2010-04-02",
+  "Genres": "Children|Horror|Sci-Fi",
+  "Director": "Kitty Cumber"
+},
+{
+  "_id": {
+    "$oid": "657d1db57e03acb792c57f68"
+  },
+  "Title": "Why Are the Bells Ringing, Mitica? (a.k.a. Carnival Scenes) (De ce trag clopotele, Mitica?)",
+  "ReleaseDate": "2016-10-17",
+  "Genres": "Comedy",
+  "Director": "Griffin Dewsnap"
+},
+{
+  "_id": {
+    "$oid": "657d1db57e03acb792c57f69"
+  },
+  "Title": "Shoulder Arms",
+  "ReleaseDate": "2023-08-06",
+  "Genres": "Comedy|War",
+  "Director": "Brendis Fullman"
+},
+{
+  "_id": {
+    "$oid": "657d1db57e03acb792c57f6a"
+  },
+  "Title": "Heartbeats (Les amours imaginaires)",
+  "ReleaseDate": "2020-03-21",
+  "Genres": "Drama|Romance",
+  "Director": "Gorden Gerriet"
+},
+{
+  "_id": {
+    "$oid": "657d1db57e03acb792c57f6b"
+  },
+  "Title": "Wallace & Gromit: The Best of Aardman Animation",
+  "ReleaseDate": "2023-03-09",
+  "Genres": "Adventure|Animation|Comedy",
+  "Director": "Carola Gunson"
+},
+{
+  "_id": {
+    "$oid": "657d1db57e03acb792c57f6c"
+  },
+  "Title": "Above Suspicion",
+  "ReleaseDate": "2022-04-05",
+  "Genres": "Drama|Thriller",
+  "Director": "Vidovik Scrancher"
+},
+{
+  "_id": {
+    "$oid": "657d1db57e03acb792c57f6d"
+  },
+  "Title": "Forbidden Zone",
+  "ReleaseDate": "2014-01-09",
+  "Genres": "Musical|Sci-Fi",
+  "Director": "Thaddeus Fishe"
+}]
