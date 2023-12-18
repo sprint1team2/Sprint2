@@ -1,6 +1,7 @@
 const express = require('express');
 const methodOverride = require('method-override');
-const morgan = require('morgan');
+const morgan = require('morgan'); // Used for detailed error logging.
+// Does it actually do anything? Look into this.
 const session = require('express-session');
 const app = express();
 const port = 3000;
