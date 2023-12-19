@@ -48,31 +48,33 @@ async function registerUserPostgres(user) {
 
 // MongoDB Operations
 
-async function findMovieByTitleMongo(title) {
-  const db = mongoClient.db('moviedatabase');
-  return db.collection('Movies').findOne({ Title: title });
-}
 
-async function findMoviesByTitleRegexMongo(titleRegex) {
-    const db = mongoClient.db('moviedatabase');
-    return db.collection('Movies').find({ Title: { $regex: titleRegex, $options: 'i' } }).toArray();
-  }
+async function findMoviesByTitleRegexMongo(titleRegex, directorRegex, genreRegex) {
+  const db = mongoClient.db('moviedatabase');
+  
+  // Build the query object based on provided parameters
+  const query = {
+    $or: [
+      { Title: { $regex: titleRegex, $options: 'i' } },
+      { Director: { $regex: directorRegex, $options: 'i' } },
+      { Genres: { $regex: genreRegex, $options: 'i' } },
+    ],
+  };
+
+  return db.collection('Movies').find(query).toArray();
+}
 
 // PostgreSQL Operations
 
-async function findMovieByTitlePostgres(title) {
-  const query = 'SELECT * FROM Movies WHERE Title = $1';
-  const values = [title];
+async function findMoviesByTitleRegexPostgres(titleRegex, directorRegex, genreRegex) {
+  const query = `
+    SELECT * FROM Movies
+    WHERE Title ~* $1 OR Director ~* $2 OR Genres ~* $3
+  `;
+  const values = [titleRegex, directorRegex, genreRegex];
   const result = await pgPool.query(query, values);
-  return result.rows[0];
+  return result.rows;
 }
-
-async function findMoviesByTitleRegexPostgres(titleRegex) {
-    const query = 'SELECT * FROM Movies WHERE Title ~* $1';
-    const values = [titleRegex];
-    const result = await pgPool.query(query, values);
-    return result.rows;
-  }
 
 module.exports = {
   connectToMongoDB,
