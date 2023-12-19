@@ -8,7 +8,7 @@ const path = require('path');
 
 router.use((req, res, next) => {
     if (!req.session || !req.session.user) {
-        if (req.url !== '/login') {
+        if (req.url !== '/login' && req.url !== '/register') {
             return res.redirect('/login');
         }
     }
@@ -51,7 +51,7 @@ router.get('/login', async (req, res) => {
     user = req.session.user;
     try {
         res.render('login', { pageTitle: 'Login',  message: '', user });
-        console.log(users);
+        // console.log(users);
     } catch (error) {
         console.log(error);
         res.status(500).send('Internal Server Error<br><a href="/">Home</a>');
@@ -59,15 +59,21 @@ router.get('/login', async (req, res) => {
 });
 
 router.post('/login', async (req, res) => {
-    const { username, password } = req.body;
+    try {
+        const { username, password } = req.body;
 
-    const user = users.find(u => u.username === username && u.password === password);
+        const user = await dal.authenticateUserPostgres(username, password);
 
-    if (user) {
+        if (!user) {
+            res.render('login', { pageTitle: 'Login', message: 'Invalid username or password', user });
+            return;
+        }
+
         req.session.user = user;
         res.redirect('/');
-    } else {
-        res.render('login', { pageTitle: 'Login', message: 'Invalid username or password' });
+    } catch (error) {
+        console.log(error);
+        res.status(500).send('Internal Server Error<br><a href="/">Home</a>');
     }
 });
 
@@ -82,22 +88,28 @@ router.get('/register', async (req, res) => {
 });
 
 router.post('/register', async (req, res) => {
-    const { username, password, email } = req.body;
+    const { username, password, email, firstName, lastName } = req.body;
 
-    const newUser = {
-        id: users.length + 1,
-        username,
-        password,
-        email
-    };
+    // Make sure username and email are unique
 
-    
-    // Doesn't properly add users to the array.
-    addUser(newUser);
-    console.log(users);
+    try {
+        const newUser = {
+            Username: username,
+            Password: password,
+            Email: email,
+            FirstName: firstName,
+            LastName: lastName
+        }
 
-    req.session.user = newUser;
-    res.redirect('/');
+        const user = await dal.registerUserPostgres(newUser);
+
+        req.session.user = user;
+
+        res.redirect('/');
+    } catch (error) {
+        console.log(error);
+        res.status(500).send('Internal Server Error<br><a href="/">Home</a>');
+    }
 });
 
 router.get('/logout', async (req, res) => {

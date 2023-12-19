@@ -44,7 +44,7 @@ async function registerUserPostgres(user) {
     const values = [user.Username, user.Password, user.Email, user.FirstName, user.LastName];
     const result = await pgPool.query(query, values);
     return result.rows[0];
-  }
+}
 
 // MongoDB Operations
 
@@ -79,14 +79,11 @@ async function findMoviesByTitleRegexPostgres(titleRegex, directorRegex, genreRe
 module.exports = {
   connectToMongoDB,
   closeMongoDB,
-  authenticateUserMongo,
+//   authenticateUserMongo,
   authenticateUserPostgres,
-  insertMovieMongo,
   findMovieByTitleMongo,
-  updateMovieMongo,
-  deleteMovieMongo,
-  insertMoviePostgres,
   findMovieByTitlePostgres,
-  updateMoviePostgres,
-  deleteMoviePostgres,
+  findMoviesByTitleRegexMongo,
+  findMoviesByTitleRegexPostgres,
+  registerUserPostgres
 };
