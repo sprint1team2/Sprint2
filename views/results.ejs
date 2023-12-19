@@ -7,6 +7,10 @@
 
 <p>Query: <%= query %></p>
 
+<p>Number of results: <%= results.length %></p>
+
+<p>Results:</p>
+
 <ul>
     <% results.forEach(result => { %>
         <li>
@@ -15,8 +19,13 @@
             Director: <strong><%= result.director %></strong><br>
             Release Date: <strong><%= result.releasedate.toLocaleDateString() %></strong><br>
         </li>
+        <br>
     <% }); %>
     <!-- <li>TESTTESTTEST</li> -->
 </ul>
+
+<br>
+
+<p><a href="/">Go back</a></p>
 
 <%- include ('./partials/foot.ejs') %>
