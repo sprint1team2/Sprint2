@@ -72,9 +72,9 @@ router.get('/results', async (req, res) => {
         logSearch(user.username, query);
 
         if (db === 'postgres') {
-            results = await dal.findMoviesByTitleRegexPostgres(query);
+            results = await dal.findMoviesByRegexPostgres(query);
         } else if (db === 'mongo') {
-            results = await dal.findMoviesByTitleRegexMongo(query);
+            results = await dal.findMoviesByRegexMongo(query);
         } else {
             // If both databases are selected...
         }
