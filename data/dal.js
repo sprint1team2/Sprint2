@@ -2,15 +2,16 @@ const { MongoClient } = require('mongodb');
 const { Pool } = require('pg'); 
 
 // MongoDB Connection
-const mongoClient = new MongoClient('mongodb://localhost:27017', { useNewUrlParser: true, useUnifiedTopology: true });
+const mongoClient = new MongoClient('mongodb://localhost:27017');
+// Removed useNewUrlParser: true and useUnifiedTopology: true, as these are deprecated options in Node.js 4.0.0.
 
 // PostgreSQL Connection Pool
 const pgPool = new Pool({
-  user: 'your_pg_user',
-  host: 'localhost',
-  database: 'moviedatabase', // Change this to your PostgreSQL database name
-  password: 'your_pg_password',
-  port: 5432,
+    user: 'postgres',
+    host: 'localhost',
+    database: 'moviedatabase', // Change this to your PostgreSQL database name
+    password: 'Keyin2021',
+    port: 5432,
 });
 
 // Connect to MongoDB

@@ -1,9 +1,6 @@
 const express = require('express');
-const { addUser, getAllUsers } = require('../data/users');
 const router = express.Router();
-const userData = require('../data/users'); // Temporary users file for testing purposes. Remove when database is complete.
-const users = getAllUsers();
-// const dal = require('../data/dal');
+const dal = require('../data/dal');
 
 // For logging
 const fs = require('fs');
