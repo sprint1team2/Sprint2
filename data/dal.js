@@ -44,41 +44,26 @@ async function authenticateUserMongo(username, providedPassword) {
     return result.rows[0] || null;
   }
 
-// Movies CRUD operations
+async function registerUserPostgres(user) {
+    const query = 'INSERT INTO Users (Username, Password, Email, FirstName, LastName) VALUES ($1, $2, $3, $4, $5) RETURNING *';
+    const values = [user.Username, user.Password, user.Email, user.FirstName, user.LastName];
+    const result = await pgPool.query(query, values);
+    return result.rows[0];
+  }
 
 // MongoDB Operations
-
-async function insertMovieMongo(movie) {
-  const db = mongoClient.db('moviedatabase');
-  const result = await db.collection('Movies').insertOne(movie);
-  return result.ops[0];
-}
 
 async function findMovieByTitleMongo(title) {
   const db = mongoClient.db('moviedatabase');
   return db.collection('Movies').findOne({ Title: title });
 }
 
-async function updateMovieMongo(movieId, updatedFields) {
-  const db = mongoClient.db('moviedatabase');
-  const result = await db.collection('Movies').updateOne({ _id: movieId }, { $set: updatedFields });
-  return result.modifiedCount > 0;
-}
-
-async function deleteMovieMongo(movieId) {
-  const db = mongoClient.db('moviedatabase');
-  const result = await db.collection('Movies').deleteOne({ _id: movieId });
-  return result.deletedCount > 0;
-}
+async function findMoviesByTitleRegexMongo(titleRegex) {
+    const db = mongoClient.db('moviedatabase');
+    return db.collection('Movies').find({ Title: { $regex: titleRegex, $options: 'i' } }).toArray();
+  }
 
 // PostgreSQL Operations
-
-async function insertMoviePostgres(movie) {
-  const query = 'INSERT INTO Movies (Title, ReleaseDate, Genres, Director, UserID) VALUES ($1, $2, $3, $4, $5) RETURNING *';
-  const values = [movie.Title, movie.ReleaseDate, movie.Genres, movie.Director, movie.UserID];
-  const result = await pgPool.query(query, values);
-  return result.rows[0];
-}
 
 async function findMovieByTitlePostgres(title) {
   const query = 'SELECT * FROM Movies WHERE Title = $1';
@@ -87,19 +72,12 @@ async function findMovieByTitlePostgres(title) {
   return result.rows[0];
 }
 
-async function updateMoviePostgres(movieId, updatedFields) {
-  const query = 'UPDATE Movies SET Title = $1, ReleaseDate = $2, Genres = $3, Director = $4, UserID = $5 WHERE MovieID = $6 RETURNING *';
-  const values = [updatedFields.Title, updatedFields.ReleaseDate, updatedFields.Genres, updatedFields.Director, updatedFields.UserID, movieId];
-  const result = await pgPool.query(query, values);
-  return result.rows[0];
-}
-
-async function deleteMoviePostgres(movieId) {
-  const query = 'DELETE FROM Movies WHERE MovieID = $1 RETURNING *';
-  const values = [movieId];
-  const result = await pgPool.query(query, values);
-  return result.rows[0];
-}
+async function findMoviesByTitleRegexPostgres(titleRegex) {
+    const query = 'SELECT * FROM Movies WHERE Title ~* $1';
+    const values = [titleRegex];
+    const result = await pgPool.query(query, values);
+    return result.rows;
+  }
 
 module.exports = {
   connectToMongoDB,
