@@ -76,6 +76,16 @@ async function findMoviesByTitleRegexPostgres(titleRegex, directorRegex, genreRe
   return result.rows;
 }
 
+<<<<<<< Updated upstream
+=======
+async function findMoviesByTitleRegexPostgres(titleRegex) {
+    const query = 'SELECT * FROM Movies WHERE Title ~* $1';
+    const values = [titleRegex];
+    const result = await pgPool.query(query, values);
+    return result.rows;
+}
+
+>>>>>>> Stashed changes
 module.exports = {
   connectToMongoDB,
   closeMongoDB,

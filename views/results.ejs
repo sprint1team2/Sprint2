@@ -1,0 +1,22 @@
+<%- include ('./partials/head.ejs') %>
+<%- include ('./partials/nav.ejs') %>
+
+<h1><%= pageTitle %></h1>
+
+<p>Database: <%= db %></p>
+
+<p>Query: <%= query %></p>
+
+<ul>
+    <% results.forEach(result => { %>
+        <li>
+            Title: <strong><%= result.title %></strong><br>
+            Genre: <strong><%= result.genres %></strong><br>
+            Director: <strong><%= result.director %></strong><br>
+            Release Date: <strong><%= result.releasedate.toLocaleDateString() %></strong><br>
+        </li>
+    <% }); %>
+    <!-- <li>TESTTESTTEST</li> -->
+</ul>
+
+<%- include ('./partials/foot.ejs') %>
