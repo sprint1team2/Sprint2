@@ -32,12 +32,6 @@ function closeMongoDB() {
 
 // User Authentication
 
-async function authenticateUserMongo(username, providedPassword) {
-    const db = mongoClient.db('moviedatabase');
-    const user = await db.collection('Users').findOne({ Username: username, Password: providedPassword });
-    return user || null;
-  }
-  
   async function authenticateUserPostgres(username, providedPassword) {
     const query = 'SELECT * FROM Users WHERE Username = $1 AND Password = $2';
     const values = [username, providedPassword];
