@@ -1,23 +1,14 @@
 <%- include('./partials/head.ejs') %>
 <%- include('./partials/nav.ejs') %>
         <h1><%= pageTitle %></h1>
-        <!-- <form action="/log" method="post">
+        <% if (user) { %>
+        <form action="/log" method="post">
             <label for="testLogging">Enter some text:</label>
             <input type="text" name="testLogging" id="testLogging" required>
             <br>
             <button type="submit">Submit</button>
-        </form> -->
-        <form action="/results" method="get">
-            <label for="dbselect">Select database to search:</label>
-            <select name="dbselect" id="dbselect">
-                <option value="postgres">PostgreSQL</option>
-                <option value="mongo">MongoDB</option>
-                <option value="both">Both</option>
-            </select>
-            <label for="query">Enter search query:</label>
-            <input type="text" name="query" id="query" required>
-            <br>
-            <button type="submit">Submit</button>
         </form>
+        <% } %>
 
-<%- include('./partials/foot.ejs') %>
+    </body>
+</html>
