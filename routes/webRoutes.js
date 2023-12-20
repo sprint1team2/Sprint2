@@ -67,19 +67,31 @@ router.get('/results', async (req, res) => {
         const query = req.query.query;
         let results = [];
 
-        console.log("TEST: " + db + " " + query + " " + user.username);
-
         logSearch(user.username, query);
 
         if (db === 'postgres') {
             results = await dal.findMoviesByRegexPostgres(query);
+            console.log("Querying Postgres");
         } else if (db === 'mongo') {
             results = await dal.findMoviesByRegexMongo(query);
+            console.log("Querying Mongo");
         } else {
-            // If both databases are selected...
+            postgresResults = await dal.findMoviesByRegexPostgres(query);
+            mongoResults = await dal.findMoviesByRegexMongo(query);
+            console.log("Querying Postgres and Mongo");
+
+            const standardizeResults = (results, db) => {
+                return results.map(result => ({
+                    title: db === 'postgres' ? result.title : result.Title,
+                    genres: db === 'postgres' ? result.genres : result.Genres,
+                    director: db === 'postgres' ? result.director : result.Director,
+                    releasedate: db === 'postgres' ? result.releasedate.toLocaleDateString() : result.ReleaseDate
+                }))
+            }
+
+            results = [...standardizeResults(postgresResults), ...standardizeResults(mongoResults)];
         }
     
-        console.log(results);
         res.render('results', { pageTitle: 'Results', user, db, query, results });
 
         } catch (error) {
@@ -121,7 +133,7 @@ router.post('/login', async (req, res) => {
 router.get('/register', async (req, res) => {
     user = req.session.user;
     try {
-        res.render('register', { pageTitle: 'Register', user });
+        res.render('register', { pageTitle: 'Register', message: '', user });
     } catch (error) {
         console.log(error);
         res.status(500).send('Internal Server Error<br><a href="/">Home</a>');
@@ -132,6 +144,15 @@ router.post('/register', async (req, res) => {
     const { username, password, email, firstName, lastName } = req.body;
 
     // Make sure username and email are unique
+    if (await dal.findUserByUsernamePostgres(username)) {
+        res.render('register', { pageTitle: 'Register', message: 'Username already exists', user });
+        return;
+    }
+
+    if (await dal.findUserByEmailPostgres(email)) {
+        res.render('register', { pageTitle: 'Register', message: 'Email already exists', user });
+        return;
+    }
 
     try {
         const newUser = {

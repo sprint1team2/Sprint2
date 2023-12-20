@@ -7,8 +7,8 @@ let mongoClient; // Declare mongoClient in the module scope
 const pgPool = new Pool({
   user: 'postgres',
   host: 'localhost',
-  database: 'moviedatabase', // Change this to your PostgreSQL database name
-  password: 'art2200',
+  database: 'moviedatabase',
+  password: 'Keyin2021', // Change to your own password!
   port: 5432,
 });
 
@@ -114,5 +114,7 @@ module.exports = {
   authenticateUserPostgres,
   findMoviesByRegexMongo,
   findMoviesByRegexPostgres,
-  registerUserPostgres
+  registerUserPostgres,
+  findUserByEmailPostgres,
+  findUserByUsernamePostgres
 };
