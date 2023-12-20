@@ -14,10 +14,10 @@
 <ul>
     <% results.forEach(result => { %>
         <li>
-            Title: <strong><%= result.title %></strong><br>
-            Genre: <strong><%= result.genres %></strong><br>
-            Director: <strong><%= result.director %></strong><br>
-            Release Date: <strong><%= result.releasedate.toLocaleDateString() %></strong><br>
+            Title: <strong><%= db === 'postgres' ? result.title : result.Title %></strong><br>
+            Genre: <strong><%= db === 'postgres' ? result.genres : result.Genres %></strong><br>
+            Director: <strong><%= db === 'postgres' ? result.director : result.Director %></strong><br>
+            Release Date: <strong><%= db === 'postgres' ? result.release_date.toLocaleDateString() : result.ReleaseDate.toLocaleDateString() %></strong><br>
         </li>
         <br>
     <% }); %>
