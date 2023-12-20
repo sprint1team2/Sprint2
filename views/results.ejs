@@ -17,7 +17,7 @@
             Title: <strong><%= db === 'postgres' ? result.title : result.Title %></strong><br>
             Genre: <strong><%= db === 'postgres' ? result.genres : result.Genres %></strong><br>
             Director: <strong><%= db === 'postgres' ? result.director : result.Director %></strong><br>
-            Release Date: <strong><%= db === 'postgres' ? result.release_date.toLocaleDateString() : result.ReleaseDate.toLocaleDateString() %></strong><br>
+            Release Date: <strong><%= db === 'postgres' ? result.releasedate.toLocaleDateString() : result.ReleaseDate %></strong><br>
         </li>
         <br>
     <% }); %>
