@@ -65,7 +65,7 @@ router.get('/results', async (req, res) => {
         user = req.session.user;
         const db = req.query.dbselect;
         const query = req.query.query;
-        let results = [];
+        let results;
 
         logSearch(user.username, query);
 
@@ -80,17 +80,19 @@ router.get('/results', async (req, res) => {
             mongoResults = await dal.findMoviesByRegexMongo(query);
             console.log("Querying Postgres and Mongo");
 
-            const standardizeResults = (results, db) => {
-                return results.map(result => ({
-                    title: db === 'postgres' ? result.title : result.Title,
-                    genres: db === 'postgres' ? result.genres : result.Genres,
-                    director: db === 'postgres' ? result.director : result.Director,
-                    releasedate: db === 'postgres' ? result.releasedate : result.ReleaseDate
-                }))
-            }
-
-            results = [...standardizeResults(postgresResults), ...standardizeResults(mongoResults)];
+            results = [...postgresResults, ...mongoResults];
         }
+
+        const standardizeResults = (results) => {
+            return results.map(result => {
+                return Object.keys(result).reduce((acc, key) => {
+                    acc[key.toLowerCase()] = result[key];
+                    return acc;
+                }, {});
+            });
+        };
+
+        results = standardizeResults(results);
     
         res.render('results', { pageTitle: 'Results', user, db, query, results });
 
