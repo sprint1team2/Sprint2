@@ -17,7 +17,7 @@
             Title: <strong><%= result.title %></strong><br>
             Genre(s): <strong><%= result.genres %></strong><br>
             Director: <strong><%= result.director %></strong><br>
-            Release Date: <strong><%= result.releasedate %></strong><br>
+            Release Date: <strong><%= result.releasedate.toLocaleDateString() %></strong><br>
         </li>
         <br>
     <% }); %>
