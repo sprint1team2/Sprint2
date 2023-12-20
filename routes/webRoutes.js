@@ -85,7 +85,7 @@ router.get('/results', async (req, res) => {
                     title: db === 'postgres' ? result.title : result.Title,
                     genres: db === 'postgres' ? result.genres : result.Genres,
                     director: db === 'postgres' ? result.director : result.Director,
-                    releasedate: db === 'postgres' ? result.releasedate.toLocaleDateString() : result.ReleaseDate
+                    releasedate: db === 'postgres' ? result.releasedate : result.ReleaseDate
                 }))
             }
 
