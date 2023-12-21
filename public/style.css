@@ -28,13 +28,16 @@ nav {
   padding: 10px 0;
 }
 
-nav a {
+nav a,
+.go-back-link {
   color: #fff;
   text-decoration: none;
   margin-right: 15px;
 }
 
-nav a:hover {
+
+nav a:hover,
+.go-back-link:hover {
   text-decoration: underline;
 }
 

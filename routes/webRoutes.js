@@ -18,27 +18,12 @@ router.use((req, res, next) => {
 router.get('/', async (req, res) => {
     user = req.session.user;
     try {
-        res.render('index', { pageTitle: 'Movie Search Engine', user });
+        res.render('index', { user });
     } catch (error) {
         console.log(error);
         res.status(500).send('Internal Server Error');
     }
 });
-
-// router.get('/search', async (req, res) => {
-//     user = req.session.user;
-//     const database = req.query.dbselect;
-//     const query = req.query.query;
-
-//     logSearch(user.username, query);
-
-//     try {
-//         res.redirect(`/results?db=${database}&query=${query}`, { pageTitle: 'Results', user });
-//     } catch (error) {
-//         console.log(error);
-//         res.status(500).send('Internal Server Error<br><a href="/">Home</a>');
-//     }
-// })
 
 function logSearch(username, query) {
     const currentDate = new Date();
@@ -94,7 +79,7 @@ router.get('/results', async (req, res) => {
 
         results = standardizeResults(results);
     
-        res.render('results', { pageTitle: 'Results', user, db, query, results });
+        res.render('results', { user, db, query, results });
 
         } catch (error) {
             console.log(error);
@@ -105,7 +90,7 @@ router.get('/results', async (req, res) => {
 router.get('/login', async (req, res) => {
     user = req.session.user;
     try {
-        res.render('login', { pageTitle: 'Login',  message: '', user });
+        res.render('login', { message: '', user });
         // console.log(users);
     } catch (error) {
         console.log(error);
@@ -120,7 +105,7 @@ router.post('/login', async (req, res) => {
         const user = await dal.authenticateUserPostgres(username, password);
 
         if (!user) {
-            res.render('login', { pageTitle: 'Login', message: 'Invalid username or password', user });
+            res.render('login', { message: 'Invalid username or password', user });
             return;
         }
 
@@ -135,7 +120,7 @@ router.post('/login', async (req, res) => {
 router.get('/register', async (req, res) => {
     user = req.session.user;
     try {
-        res.render('register', { pageTitle: 'Register', message: '', user });
+        res.render('register', { message: '', user });
     } catch (error) {
         console.log(error);
         res.status(500).send('Internal Server Error<br><a href="/">Home</a>');
@@ -147,12 +132,12 @@ router.post('/register', async (req, res) => {
 
     // Make sure username and email are unique
     if (await dal.findUserByUsernamePostgres(username)) {
-        res.render('register', { pageTitle: 'Register', message: 'Username already exists', user });
+        res.render('register', { message: 'Username already exists', user });
         return;
     }
 
     if (await dal.findUserByEmailPostgres(email)) {
-        res.render('register', { pageTitle: 'Register', message: 'Email already exists', user });
+        res.render('register', { message: 'Email already exists', user });
         return;
     }
 
