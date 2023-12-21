@@ -22,4 +22,6 @@ CREATE TABLE Movies (
     ReleaseDate DATE,
     Genres VARCHAR(100),
     Director VARCHAR(100),
+    UserID INT,
+    FOREIGN KEY (UserID) REFERENCES Users(UserID)
 );

@@ -1,0 +1,108 @@
+/* Reset some default styles */
+body,
+h1,
+h2,
+h3,
+p,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #2b2b2b; /* Dark background color resembling a movie theater */
+  color: #fff; /* Light text color */
+}
+
+header {
+  background-color: #1c1c1c; /* Dark header */
+  color: #fff;
+  padding: 10px 0;
+  text-align: center;
+}
+
+nav {
+  background-color: #222; /* Slightly lighter navigation background */
+  padding: 10px 0;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  margin-right: 15px;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+section {
+  padding: 20px 0;
+}
+
+.form-container {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+form {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  margin-top: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+input {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+  border: 1px solid #555;
+  border-radius: 4px;
+  margin-bottom: 15px;
+}
+
+button {
+  background-color: #ffcc29; /* Yellow button color resembling a movie ticket */
+  color: #222;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #ffd94a; /* Lighter yellow on hover */
+}
+
+.results-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.result-card {
+  background-color: #444;
+  color: #fff;
+  padding: 15px;
+  margin: 10px;
+  width: calc(33.33% - 20px);
+  box-sizing: border-box;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Add more styles as needed */
