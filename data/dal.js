@@ -50,7 +50,7 @@ async function registerUserPostgres(user) {
     const values = [user.Username, user.Password, user.Email, user.FirstName, user.LastName];
     const result = await pgPool.query(query, values);
     return result.rows[0];
-  }
+}
 
 // MongoDB Operations
 
@@ -111,7 +111,6 @@ async function findUserByUsernamePostgres(username) {
 module.exports = {
   connectToMongoDB,
   closeMongoDB,
-  authenticateUserMongo,
   authenticateUserPostgres,
   findMoviesByRegexMongo,
   findMoviesByRegexPostgres,
