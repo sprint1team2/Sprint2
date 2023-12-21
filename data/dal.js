@@ -1,43 +1,43 @@
 const { MongoClient } = require('mongodb');
 const { Pool } = require('pg'); 
 
-// MongoDB Connection
-const mongoClient = new MongoClient('mongodb://localhost:27017');
-// Removed useNewUrlParser: true and useUnifiedTopology: true, as these are deprecated options in Node.js 4.0.0.
+let mongoClient; // Declare mongoClient in the module scope
 
 // PostgreSQL Connection Pool
 const pgPool = new Pool({
-    user: 'postgres',
-    host: 'localhost',
-    database: 'moviedatabase', // Change this to your PostgreSQL database name
-    password: 'Keyin2021',
-    port: 5432,
+  user: 'postgres',
+  host: 'localhost',
+  database: 'moviedatabase',
+  password: 'Keyin2021', // Change to your own password!
+  port: 5432,
 });
 
-// Connect to MongoDB
 async function connectToMongoDB() {
-  try {
-    await mongoClient.connect();
-    console.log('Connected to MongoDB');
-  } catch (error) {
-    console.error('Error connecting to MongoDB:', error);
+  if (!mongoClient || !mongoClient.topology || !mongoClient.topology.isConnected()) {
+    mongoClient = new MongoClient('mongodb://127.0.0.1:27017');
+
+    try {
+      await mongoClient.connect();
+      console.log('Connected to MongoDB');
+    } catch (error) {
+      console.error('Error connecting to MongoDB:', error);
+      throw error;
+    }
   }
+
+  return mongoClient;
 }
 
 // Close MongoDB connection
 function closeMongoDB() {
-  mongoClient.close();
-  console.log('Closed MongoDB connection');
+  if (mongoClient && mongoClient.topology && mongoClient.topology.isConnected()) {
+    mongoClient.close();
+    console.log('Closed MongoDB connection');
+  }
 }
 
 // User Authentication
 
-async function authenticateUserMongo(username, providedPassword) {
-    const db = mongoClient.db('moviedatabase');
-    const user = await db.collection('Users').findOne({ Username: username, Password: providedPassword });
-    return user || null;
-  }
-  
   async function authenticateUserPostgres(username, providedPassword) {
     const query = 'SELECT * FROM Users WHERE Username = $1 AND Password = $2';
     const values = [username, providedPassword];
@@ -54,43 +54,68 @@ async function registerUserPostgres(user) {
 
 // MongoDB Operations
 
-async function findMovieByTitleMongo(title) {
-  const db = mongoClient.db('moviedatabase');
-  return db.collection('Movies').findOne({ Title: title });
-}
 
-async function findMoviesByTitleRegexMongo(titleRegex) {
-    const db = mongoClient.db('moviedatabase');
-    return db.collection('Movies').find({ Title: { $regex: titleRegex, $options: 'i' } }).toArray();
+async function findMoviesByRegexMongo(regex) {
+  let client; // Declare the client variable
+
+  try {
+    // Connect to MongoDB
+    client = await connectToMongoDB();
+
+    // Build the query object based on provided parameters
+    const query = {
+      $or: [
+        { Title: { $regex: regex, $options: 'i' } },
+        { Director: { $regex: regex, $options: 'i' } },
+        { Genres: { $regex: regex, $options: 'i' } },
+      ],
+    };
+
+    const db = client.db('moviedatabase');
+    return db.collection('Movies').find(query).toArray();
+  } catch (error) {
+    console.error('Error finding movies in MongoDB:', error);
+    throw error;
+  } finally {
+    // Close MongoDB connection
+   // closeMongoDB();
   }
+}
 
 // PostgreSQL Operations
 
-async function findMovieByTitlePostgres(title) {
-  const query = 'SELECT * FROM Movies WHERE Title = $1';
-  const values = [title];
+async function findMoviesByRegexPostgres(regex) {
+  const query = `
+    SELECT * FROM Movies
+    WHERE Title ~* $1 OR Director ~* $2 OR Genres ~* $3
+  `;
+  const values = [regex, regex, regex];
+  const result = await pgPool.query(query, values);
+  return result.rows;
+}
+
+async function findUserByEmailPostgres(email) {
+  const query = 'SELECT * FROM Users WHERE Email = $1';
+  const values = [email];
   const result = await pgPool.query(query, values);
   return result.rows[0];
 }
 
-async function findMoviesByTitleRegexPostgres(titleRegex) {
-    const query = 'SELECT * FROM Movies WHERE Title ~* $1';
-    const values = [titleRegex];
-    const result = await pgPool.query(query, values);
-    return result.rows;
-  }
+async function findUserByUsernamePostgres(username) {
+  const query = 'SELECT * FROM Users WHERE Username = $1';
+  const values = [username];
+  const result = await pgPool.query(query, values);
+  return result.rows[0];
+}
 
 module.exports = {
   connectToMongoDB,
   closeMongoDB,
   authenticateUserMongo,
   authenticateUserPostgres,
-  insertMovieMongo,
-  findMovieByTitleMongo,
-  updateMovieMongo,
-  deleteMovieMongo,
-  insertMoviePostgres,
-  findMovieByTitlePostgres,
-  updateMoviePostgres,
-  deleteMoviePostgres,
+  findMoviesByRegexMongo,
+  findMoviesByRegexPostgres,
+  registerUserPostgres,
+  findUserByEmailPostgres,
+  findUserByUsernamePostgres
 };

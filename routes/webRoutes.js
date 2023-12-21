@@ -44,8 +44,50 @@ router.post('/log', async (req, res) => {
 
     fs.appendFileSync(logFilePath, logData);
 
-    res.redirect('/');
-})
+    console.log(logData);
+});
+
+router.get('/results', async (req, res) => {
+    try {
+        user = req.session.user;
+        const db = req.query.dbselect;
+        const query = req.query.query;
+        let results;
+
+        logSearch(user.username, query);
+
+        if (db === 'postgres') {
+            results = await dal.findMoviesByRegexPostgres(query);
+            console.log("Querying Postgres");
+        } else if (db === 'mongo') {
+            results = await dal.findMoviesByRegexMongo(query);
+            console.log("Querying Mongo");
+        } else {
+            postgresResults = await dal.findMoviesByRegexPostgres(query);
+            mongoResults = await dal.findMoviesByRegexMongo(query);
+            console.log("Querying Postgres and Mongo");
+
+            results = [...postgresResults, ...mongoResults];
+        }
+
+        const standardizeResults = (results) => {
+            return results.map(result => {
+                return Object.keys(result).reduce((acc, key) => {
+                    acc[key.toLowerCase()] = result[key];
+                    return acc;
+                }, {});
+            });
+        };
+
+        results = standardizeResults(results);
+    
+        res.render('results', { pageTitle: 'Results', user, db, query, results });
+
+        } catch (error) {
+            console.log(error);
+            res.status(500).send('Internal Server Error<br><a href="/">Home</a>');
+        }
+});
 
 router.get('/login', async (req, res) => {
     user = req.session.user;
@@ -74,7 +116,7 @@ router.post('/login', async (req, res) => {
 router.get('/register', async (req, res) => {
     user = req.session.user;
     try {
-        res.render('register', { pageTitle: 'Register', user });
+        res.render('register', { pageTitle: 'Register', message: '', user });
     } catch (error) {
         console.log(error);
         res.status(500).send('Internal Server Error<br><a href="/">Home</a>');
@@ -82,7 +124,18 @@ router.get('/register', async (req, res) => {
 });
 
 router.post('/register', async (req, res) => {
-    const { username, password, email } = req.body;
+    const { username, password, email, firstName, lastName } = req.body;
+
+    // Make sure username and email are unique
+    if (await dal.findUserByUsernamePostgres(username)) {
+        res.render('register', { pageTitle: 'Register', message: 'Username already exists', user });
+        return;
+    }
+
+    if (await dal.findUserByEmailPostgres(email)) {
+        res.render('register', { pageTitle: 'Register', message: 'Email already exists', user });
+        return;
+    }
 
     const newUser = {
         id: users.length + 1,
