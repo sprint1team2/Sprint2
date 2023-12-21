@@ -1,29 +1,31 @@
 <%- include ('./partials/head.ejs') %>
 <%- include ('./partials/nav.ejs') %>
 
-<h1><%= pageTitle %></h1>
+<div class="container">
+    <h1 class="page-title"><%= CineMart %></h1>
 
-<p>Database: <%= db %></p>
+    <p>Database: <%= db %></p>
 
-<p>Query: <%= query %></p>
+    <p>Query: <%= query %></p>
 
-<p>Number of results: <%= results.length %></p>
+    <p>Number of results: <%= results.length %></p>
 
-<p>Results:</p>
-<ul>
-    <% results.forEach(result => { %>
-        <li>
-            Title: <strong><%= result.title %></strong><br>
-            Genre(s): <strong><%= result.genres %></strong><br>
-            Director: <strong><%= result.director %></strong><br>
-            Release Date: <strong><%= result.releasedate %></strong><br>
-        </li>
-        <br>
-    <% }); %>
-</ul>
+    <p>Results:</p>
+    <ul class="results-container">
+        <% results.forEach(result => { %>
+            <li class="result-card">
+                Title: <strong><%= result.title %></strong><br>
+                Genre(s): <strong><%= result.genres %></strong><br>
+                Director: <strong><%= result.director %></strong><br>
+                Release Date: <strong><%= result.releasedate %></strong><br>
+            </li>
+            <br>
+        <% }); %>
+    </ul>
 
-<br>
+    <br>
 
-<p><a href="/">Go back</a></p>
+    <p><a href="/" class="go-back-link">Go back</a></p>
+</div>
 
 <%- include ('./partials/foot.ejs') %>

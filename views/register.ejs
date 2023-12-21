@@ -1,22 +1,25 @@
+
 <%- include('./partials/head.ejs') %>
 <%- include('./partials/nav.ejs') %>
-    <h1><%= pageTitle %></h1>
-    <% if (message !== '' ) { %>
-        <p><%= message %></p>
-    <% } %>
-    <form action="/register" method="POST">
-        <label for="username">Username:</label>
-        <input type="text" name="username" id="username" required>
-        <label for="password">Password:</label>
-        <input type="password" name="password" id="password" required>
-        <label for="email">Email Address:</label>
-        <input type="email" name="email" id="email" required>
-        <label for="firstName">First Name:</label>
-        <input type="text" name="firstName" id="firstName">
-        <label for="lastName">Last Name:</label>
-        <input type="text" name="lastName" id="lastName">
+
+<div class="container">
+    <h1 class="page-title"><%= CineMart %></h1>
+
+    <form action="/register" method="POST" class="registration-form">
+        <label for="username" class="form-label">Username:</label>
+        <input type="text" name="username" id="username" class="form-input" required>
+        <label for="password" class="form-label">Password:</label>
+        <input type="password" name="password" id="password" class="form-input" required>
+        <label for="email" class="form-label">Email Address:</label>
+        <input type="email" name="email" id="email" class="form-input" required>
+        <label for="firstName" class="form-label">First Name:</label>
+        <input type="text" name="firstName" id="firstName" class="form-input">
+        <label for="lastName" class="form-label">Last Name:</label>
+        <input type="text" name="lastName" id="lastName" class="form-input">
         <br>
-        <input type="submit" value="Register">
+        <input type="submit" value="Register" class="form-button">
     </form>
+</div>
+
 </body>
 </html>
